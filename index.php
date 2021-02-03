@@ -1,16 +1,13 @@
 <?php
-    //---FONCTION DEBUG---//
+//---FONCTION DEBUG---//
+include 'app/helpers/debug.php';
 
-    error_reporting(E_ALL);
-    ini_set('display_errors',true);
-    ini_set('html_errors',false);
-    ini_set('display_startup_errors',true);
-    ini_set('log_errors',false);
+//Variables SANITIZING (URL)
+$url = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
+$urlIsSet = isset($url);
+$id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
-    //Variables SANITIZING (URL)
-    $url = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
-    $urlIsSet = isset($url);
+//---ROADS---//
 
-    //---ROADS---//
+require('routes/web.php');
 
-    require('routes/web.php');

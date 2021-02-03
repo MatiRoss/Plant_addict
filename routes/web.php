@@ -1,8 +1,20 @@
 <?php
+// Dictionnaire des routes
+$roads = [
+    'home' => 'homeController.php',
+    'product' => 'productController.php',
+    '404' => '404Controller.php',
+    'cart' => 'cartController.php',
 
-    //Dictionnaire des routes - ROADS
-    $road = [
-        'home' => 'app/controllers/homeController.php',
-        'product' => 'app/controllers/productController.php',
-        '404' => 'ressources/views/404.tpl',
-    ];
+
+];
+if (filter_has_var(INPUT_GET, 'action')) {
+    $action = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
+    if (!isset($roads[$action])) {
+        $action = '404';
+    }
+    $files = $roads[$action];
+} else {
+    $files = $roads['home'];
+}
+include 'app/controllers/' . $files;
