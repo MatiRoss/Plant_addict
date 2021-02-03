@@ -1,8 +1,8 @@
 <?php
 try {
     $db = new PDO(    "mysql:host=localhost;dbname=shop;charset=utf8mb4",
-        'mati',
-        'mariadb',
+        'dmdespert',
+        'fwjhxey6h',
         // PDO::ATTR_ERRMODE enables exceptions for errors.  This is optional but can be handy.
         // PDO::ATTR_PERSISTENT disables persistent connections, which can cause concurrency issues in certain cases.  See "Gotchas".
         array(
