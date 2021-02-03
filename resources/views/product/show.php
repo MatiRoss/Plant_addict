@@ -20,7 +20,7 @@
                     <input type="number" id="quantity" name="quantity" required>
                 </div>
                 <div>
-                    <p><?=$price?></p>
+                    <p><?=vatApply($price,$vat)?> €</p>
                 </div>
                 <div>
                     <label for="cart">Ajouter au panier</label>

@@ -14,3 +14,11 @@ function getProduct(PDO $is_db, int $is_id): array
     $result = $sth->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function getAllProducts(PDO $is_db, int $is_displayed = 100) : array
+{
+    $sql = "SELECT * FROM products LIMIT $is_displayed";
+    $sth = $is_db->query($sql);
+    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}

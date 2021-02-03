@@ -24,6 +24,7 @@ if (filter_has_var(INPUT_GET, 'action')) {
 } else {
     $files = $roads['home'];
 }
+
 include 'resources/views/layouts/header.php';
 if ($files == $roads['404']) {
     require 'resources/views/errors/404.php';
