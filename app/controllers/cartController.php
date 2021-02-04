@@ -13,4 +13,3 @@ if ($id_product != '') {
 }
 debug($_SESSION['cart']);
 
-

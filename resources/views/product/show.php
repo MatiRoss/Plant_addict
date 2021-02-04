@@ -14,7 +14,7 @@
                 <form action="/index.php?action=cart" method="post">
                     <div>
                         <label for="quantity">Quantité</label>
-                        <input type="number" id="quantity" name="quantity" value="0" required>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" max="<?= $maxStock['stock'];?>" required>
                     </div>
                     <div>
                         <p><?=vatApply($price,$vat)?> €</p>

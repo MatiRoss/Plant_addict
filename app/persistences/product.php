@@ -22,3 +22,11 @@ function getAllProducts(PDO $is_db, int $is_displayed = 100) : array
     $result = $sth->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function maxStock($is_db, $is_id) {
+    $sql = 'SELECT products.stock FROM products WHERE products.id = :id';
+    $sth = $is_db->prepare($sql);
+    $sth->bindValue(":id", $is_id, PDO::PARAM_INT);
+    $sth->execute();
+    return $sth->fetch(PDO::FETCH_ASSOC);
+}
