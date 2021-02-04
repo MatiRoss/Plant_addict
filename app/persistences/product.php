@@ -9,7 +9,7 @@ function getProduct(PDO $is_db, int $is_id): array
 {
     $sql = "SELECT products.title, products.description, products.vat, products.price FROM products WHERE products.id=:id";
     $sth = $is_db->prepare($sql);
-    $sth->bindvalue('id', $is_id, PDO::PARAM_STR);
+    $sth->bindvalue('id', $is_id, PDO::PARAM_INT);
     $sth->execute();
     $result = $sth->fetch(PDO::FETCH_ASSOC);
     return $result;
@@ -23,7 +23,7 @@ function getAllProducts(PDO $is_db, int $is_displayed = 100) : array
     return $result;
 }
 
-function maxStock($is_db, $is_id) {
+function maxStock(PDO $is_db, int $is_id) :array {
     $sql = 'SELECT products.stock FROM products WHERE products.id = :id';
     $sth = $is_db->prepare($sql);
     $sth->bindValue(":id", $is_id, PDO::PARAM_INT);
