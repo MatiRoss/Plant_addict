@@ -38,3 +38,8 @@ nav {
 img {
     max-width: 100%;
 }
+
+th img {
+    width: 30px;
+    height: 30px;
+}
