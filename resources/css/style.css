@@ -19,7 +19,14 @@ ul {
     margin: 0;
 }
 
-.background {
+nav {
+    height: 55px;
+    position: fixed;
+    width: 100%;
+    z-index: 4000;
+}
+
+.header {
     background-image: url('../img/header.jpg');
     background-position: top;
     background-attachment: fixed;

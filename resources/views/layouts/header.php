@@ -17,18 +17,15 @@
 
     <body>
         <header>
-            <nav>
-                <ul class="text-center bg-dark p-3">
+            <nav class="bg-dark">
+                <span class="float-left p-3 text-light">PlantAddict.com</span>
+                <ul class="text-center p-3 float-right">
                     <li class="d-inline pl-2 pr-2"><a href="index.php?action=home" class="text-light">Accueil</a></li>
-                    <li class="d-inline pl-2 pr-2"><a href="index.php?action=" class="text-light">Action1</a></li>
+                    <li class="d-inline pl-2 pr-2"><a href="index.php?action=" class="text-light">Mon panier</a></li>
                     <li class="d-inline pl-2 pr-2"><a href="index.php?action=" class="text-light">Action2</a></li>
                 </ul>
             </nav>
-            <div class="container-fluid background">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p>PlantAddict</p>
-                    </div>
-                </div>
-            </div>
         </header>
+        <section class="header">
+
+        </section>
