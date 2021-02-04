@@ -17,18 +17,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($variable as $row) : ?>
-            <tr>
-                <th scope="row"><img src="storage/app/product/<?=$row['id'].".jpg"?>" alt=""></th>
-                <td><?= $row['title'] ?></td>
-                <td><?= $row['quantity']?></td>
-                <td><?= vatApply($row['price'], $row['vat']) ?>€</td>
-                <td><?= $total ?>€</td>
-            </tr>
-            <?php endforeach; ?>
+                <?php foreach ($productPost as $row) : ?>
+                <tr>
+                    <th scope="row"><img src="storage/app/product/<?=$row['id'].".jpg"?>" alt=""></th>
+                    <td><?= $row['title'] ?></td>
+                    <td><?= $row['quantity']?></td>
+                    <td><?= vatApply($row['price'], $row['vat']) ?>€</td>
+                    <td><?= $total ?>€</td>
+                </tr>
+                <?php endforeach; ?>
                 <tr>
                     <th scope="row"></th>
-                    <td colspan="5 text-right"></td>
+                    <td colspan="5 text-right">Total : </td>
                 </tr>
                 </tbody>
             </table>

@@ -20,7 +20,7 @@
                         <p><?=vatApply($price,$vat)?> €</p>
                     </div>
                     <div>
-                        <label for="cart"></label>
+                        <input type="hidden" name="id" value="<?=$id?>"/>
                         <button type="submit" id="cart" name="cart">Ajouter au panier</button>
                     </div>
                 </form>

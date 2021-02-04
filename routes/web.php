@@ -1,5 +1,6 @@
 <?php
 //Variables SANITIZING (URL)
+session_start();
 
 $url = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_STRING);
 $urlIsSet = isset($url);
