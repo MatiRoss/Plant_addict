@@ -36,7 +36,7 @@ require 'app/persistences/cart.php';
 if ($id_product != '') {
     addProductcart($id_product, $qty_product);
 }
-$cartProducts = totalCartPrice($db);
+$cartProducts = totalCart($db);
 
 //--DEBUT DES INCLUDES & ROUTES--//
 

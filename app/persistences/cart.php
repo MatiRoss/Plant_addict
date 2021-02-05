@@ -28,7 +28,7 @@ function totalProductPrice(float $is_price, float $is_vat, int $is_quantity)
     return $result;
 }
 
-function totalCartPrice(PDO $is_db): array
+function totalCart(PDO $is_db): array
 {
     $allProducts = array();
     $totalPriceCard = 0;
@@ -57,4 +57,8 @@ function totalCartPrice(PDO $is_db): array
         $allProducts['totalQuantity'] = 0;
     }
     return $allProducts;
+}
+
+if(isset($_POST['reset'])) {
+    unset($_SESSION['cart']);
 }
