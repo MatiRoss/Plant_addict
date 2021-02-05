@@ -17,23 +17,34 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($_SESSION['cart'] as $id=>$qt) : ?>
-                        <?php $selectedProduct = getProductById($db, $id); ?>
+
+                <?php foreach ($cartProducts as $row) : ?>
+                    <?php if (isset($row['infoProduct']['id'])) : ?>
                         <tr>
-                            <th scope="row"><img src="storage/app/product/<?=$selectedProduct['id'].".jpg"?>" alt=""></th>
-                            <td><?= $selectedProduct['title'] ?></td>
-                            <td><?= $qt?></td>
-                            <td><?= vatApply($selectedProduct['price'], $selectedProduct['vat']) ?>€</td>
-                            <td><?= totalProductPrice($selectedProduct['price'], $selectedProduct['vat'], $qt) ?>€</td>
+                            <th scope="row"><img src="storage/app/product/<?= $row['infoProduct']['id'] . ".jpg" ?>"
+                                                 alt=""></th>
+                            <td><?= $row['infoProduct']['title']; ?></td>
+                            <td><?= $row['quantity']; ?></td>
+                            <td><?= $row['priceTtc']; ?>€</td>
+                            <td><?= $row['totalPriceQteTtc']; ?>€</td>
                         </tr>
-                    <?php endforeach; ?>
+
+                    <?php endif; ?>
+                <?php endforeach; ?>
                 <tr>
                     <th scope="row"></th>
-                    <td colspan="5 text-right">Total : </td>
+                    <td class="text-right" colspan="5">Total : <?= $cartProducts['totalCardPrice'] ?> € </td>
                 </tr>
                 </tbody>
             </table>
-
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-right">
+                    <a class="btn bg-dark text-light">Annuler</a>
+                    <a class="btn bg-success text-light">Valider panier</a>
+                </p>
+            </div>
         </div>
     </div>
 </section>

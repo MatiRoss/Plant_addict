@@ -26,7 +26,7 @@
                 <ul class="text-center p-4 float-right">
                     <li class="d-inline p-2"><a href="index.php?action=home" class="text-light">Accueil</a></li>
                     <li class="d-inline pl-2 pr-2"><a href="index.php?action=cart" class="text-light">Mon panier</a></li>
-                    <li class="d-inline pl-2 pr-2">Qty : total :</li>
+                    <li class="d-inline pl-2 pr-2 text-light">Total: <span class="text-success"><?= $cartProducts['totalCardPrice']?> €</span> - Qty: <span class="text-warning"><?= $cartProducts['totalQuantity']?></span></li>
                 </ul>
             </nav>
         </header>
