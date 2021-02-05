@@ -11,6 +11,4 @@ if ($id_product != '') {
     addProductcart($id_product, $qty_product);
 }
 
-$selectedProduct = getProductById($db, $id_product);
-
-require 'resources/views/cart/index.php';
+require 'resources/views/cart/cartview.php';

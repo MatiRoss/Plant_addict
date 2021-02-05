@@ -17,15 +17,16 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($selectedProduct as $row) : ?>
-                <tr>
-                    <th scope="row"><img src="storage/app/product/<?=$row['id'].".jpg"?>" alt=""></th>
-                    <td><?= $row['title'] ?></td>
-                    <td><?= $_SESSION['cart'][$id_product]?></td>
-                    <td><?= vatApply($row['price'], $row['vat']) ?>€</td>
-                    <td><?= totalProductPrice($row['price'], $row['vat'], $_SESSION['cart'][$id_product]) ?>€</td>
-                </tr>
-                <?php endforeach; ?>
+                    <?php foreach ($_SESSION['cart'] as $id=>$qt) : ?>
+                        <?php $selectedProduct = getProductById($db, $id); ?>
+                        <tr>
+                            <th scope="row"><img src="storage/app/product/<?=$selectedProduct['id'].".jpg"?>" alt=""></th>
+                            <td><?= $selectedProduct['title'] ?></td>
+                            <td><?= $qt?></td>
+                            <td><?= vatApply($selectedProduct['price'], $selectedProduct['vat']) ?>€</td>
+                            <td><?= totalProductPrice($selectedProduct['price'], $selectedProduct['vat'], $qt) ?>€</td>
+                        </tr>
+                    <?php endforeach; ?>
                 <tr>
                     <th scope="row"></th>
                     <td colspan="5 text-right">Total : </td>
@@ -36,3 +37,6 @@
         </div>
     </div>
 </section>
+
+
+

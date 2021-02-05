@@ -14,14 +14,13 @@ function addProductCart(int $id, int $quantity)
        $_SESSION['cart'][$id] = $quantity;
 }
 
-
 function getProductById(PDO $is_db, $is_id) : array
 {
     $sql =  "SELECT products.id, products.title, products.price, products.vat FROM products WHERE products.id = :id";
     $sth = $is_db->prepare($sql);
     $sth->bindValue(":id",$is_id,PDO::PARAM_INT);
     $sth->execute();
-    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+    $result = $sth->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
 
