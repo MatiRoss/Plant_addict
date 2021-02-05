@@ -17,14 +17,13 @@
                 </tr>
                 </thead>
                 <tbody>
-
-                <?php foreach ($gotProductById as $row) : ?>
+                <?php foreach ($selectedProduct as $row) : ?>
                 <tr>
                     <th scope="row"><img src="storage/app/product/<?=$row['id'].".jpg"?>" alt=""></th>
                     <td><?= $row['title'] ?></td>
                     <td><?= $_SESSION['cart'][$id_product]?></td>
                     <td><?= vatApply($row['price'], $row['vat']) ?>€</td>
-                    <td><?= totalProductPrice($price, $vat, $_SESSION['cart'][$id_product]) ?>€</td>
+                    <td><?= totalProductPrice($row['price'], $row['vat'], $_SESSION['cart'][$id_product]) ?>€</td>
                 </tr>
                 <?php endforeach; ?>
                 <tr>
@@ -33,6 +32,7 @@
                 </tr>
                 </tbody>
             </table>
+
         </div>
     </div>
 </section>

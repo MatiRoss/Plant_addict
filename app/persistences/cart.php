@@ -15,7 +15,7 @@ function addProductCart(int $id, int $quantity)
 }
 
 
-function getProductById(PDO $is_db, int $is_id) :array
+function getProductById(PDO $is_db, $is_id) : array
 {
     $sql =  "SELECT products.id, products.title, products.price, products.vat FROM products WHERE products.id = :id";
     $sth = $is_db->prepare($sql);
@@ -26,8 +26,6 @@ function getProductById(PDO $is_db, int $is_id) :array
 }
 
 function totalProductPrice (float$is_price, float$is_vat, int $is_quantity) {
-    $result = (($is_price * $is_vat) / 100) + $is_price;
-    $result = $result * $is_quantity;
+    $result = ((($is_price * $is_vat) / 100) + $is_price) * $is_quantity;
     return number_format($result, 2);
 }
-
