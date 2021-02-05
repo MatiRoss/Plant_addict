@@ -13,14 +13,18 @@
         <!--STYLESHEET-CSS-->
         <link rel="stylesheet" href="resources/css/bootstrap.min.css">
         <link rel="stylesheet" href="resources/css/style.css">
+        <!--FONTS-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <header>
             <nav class="bg-dark">
-                <span class="float-left p-3 text-light">PlantAddict.com</span>
-                <ul class="text-center p-3 float-right">
-                    <li class="d-inline pl-2 pr-2"><a href="index.php?action=home" class="text-light">Accueil</a></li>
+                <span class="float-left p-3 text-light logo">Plant<b>Addict.com</b></span>
+                <ul class="text-center p-4 float-right">
+                    <li class="d-inline p-2"><a href="index.php?action=home" class="text-light">Accueil</a></li>
                     <li class="d-inline pl-2 pr-2"><a href="index.php?action=cart" class="text-light">Mon panier</a></li>
                     <li class="d-inline pl-2 pr-2">Qty : total :</li>
                 </ul>

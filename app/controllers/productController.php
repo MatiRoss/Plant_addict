@@ -9,7 +9,6 @@ $price = $product['price'];
 $vat = $product['vat'];
 
 $maxStock = maxStock($db, $id);
-debug($maxStock);
 include 'resources/views/product/show.php';
 
 

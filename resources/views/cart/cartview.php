@@ -1,8 +1,8 @@
-<section>
+<section class="p-4">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1>Panier</h1>
+            <div class="col-md-12 p-4">
+                <h1>Votre panier</h1>
             </div>
         </div>
         <div class="row">

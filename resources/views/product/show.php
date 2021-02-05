@@ -1,11 +1,11 @@
 <section class="p-4">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1><?=$titleProduct?></h1>
+            <div class="col-md-12 p-4">
+                <h1 class="border-bottom"><?=$titleProduct?></h1>
             </div>
         </div>
-        <div class="row">
+        <div class="row pb-4">
             <div class="col-md-6">
                 <img src="storage/app/product/<?=$id.".jpg"?>" alt="">
             </div>
@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <input type="hidden" name="id" value="<?=$id?>"/>
-                        <button type="submit" id="cart" name="cart">Ajouter au panier</button>
+                        <button class="btn bg-dark text-light" type="submit" id="cart" name="cart">Ajouter au panier</button>
                     </div>
                 </form>
             </div>
