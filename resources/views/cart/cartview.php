@@ -28,12 +28,11 @@
                             <td><?= $row['priceTtc']; ?>€</td>
                             <td><?= $row['totalPriceQteTtc']; ?>€</td>
                         </tr>
-
                     <?php endif; ?>
                 <?php endforeach; ?>
                 <tr>
                     <th scope="row"></th>
-                    <td class="text-right" colspan="5">Total : <?= $cartProducts['totalCardPrice'] ?> € </td>
+                    <td class="text-right" colspan="5">Total : <?= $cartProducts['totalCardPrice'] ?> €</td>
                 </tr>
                 </tbody>
             </table>

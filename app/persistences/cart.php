@@ -33,20 +33,28 @@ function totalCartPrice(PDO $is_db): array
     $allProducts = array();
     $totalPriceCard = 0;
     $totalqt = 0;
-    foreach ($_SESSION['cart'] as $id => $qt) {
-        $selectedProduct = getProductById($is_db, $id);
-        $pricettc = vatApply($selectedProduct['price'], $selectedProduct['vat']);
-        $totalPriceQteTtc = totalProductPrice($selectedProduct['price'], $selectedProduct['vat'], $qt);
-        $totalPriceCard += $totalPriceQteTtc;
-        $totalqt += $qt;
-        $allProducts[$id] = [
-            "infoProduct" => $selectedProduct,
-            "quantity" => $qt,
-            "priceTtc" => $pricettc,
-            "totalPriceQteTtc" => $totalPriceQteTtc,
-        ];
+    if (isset($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $id => $qt) {
+            $selectedProduct = getProductById($is_db, $id);
+            $pricettc = vatApply($selectedProduct['price'], $selectedProduct['vat']);
+            $totalPriceQteTtc = totalProductPrice($selectedProduct['price'], $selectedProduct['vat'], $qt);
+            $totalPriceCard += $totalPriceQteTtc;
+            $totalqt += $qt;
+            $allProducts[$id] = [
+                "infoProduct" => $selectedProduct,
+                "quantity" => $qt,
+                "priceTtc" => $pricettc,
+                "totalPriceQteTtc" => $totalPriceQteTtc,
+            ];
+
+        }
+        $allProducts['totalCardPrice'] = $totalPriceCard;
+        $allProducts['totalQuantity'] = $totalqt;
+
+    } else {
+
+        $allProducts['totalCardPrice'] = 0;
+        $allProducts['totalQuantity'] = 0;
     }
-    $allProducts['totalCardPrice'] = $totalPriceCard;
-    $allProducts['totalQuantity'] = $totalqt;
     return $allProducts;
 }
