@@ -1,1 +1,1 @@
-<?="Page introuvable, erreur 404"; ?>
+<?= "Page introuvable, erreur 404"; ?>

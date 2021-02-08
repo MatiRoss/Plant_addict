@@ -9,7 +9,11 @@ function initCart()
 
 function addProductCart(int $id, int $quantity)
 {
-    $_SESSION['cart'][$id] = $quantity;
+    if (isset($_SESSION['cart'][$id])) {
+        $_SESSION['cart'][$id] += $quantity;
+    } else {
+        $_SESSION['cart'][$id] = $quantity;
+    }
 }
 
 function getProductById(PDO $is_db, $is_id): array
@@ -59,6 +63,4 @@ function totalCart(PDO $is_db): array
     return $allProducts;
 }
 
-if(isset($_POST['reset'])) {
-    unset($_SESSION['cart']);
-}
+

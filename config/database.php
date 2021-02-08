@@ -1,7 +1,7 @@
 <?php
 require 'config_DB.php';
 try {
-    $db = new PDO(    "mysql:host=localhost;dbname=shop;charset=utf8mb4",
+    $db = new PDO("mysql:host=localhost;dbname=shop;charset=utf8mb4",
         $user,
         $pass,
         // PDO::ATTR_ERRMODE enables exceptions for errors.  This is optional but can be handy.

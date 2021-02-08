@@ -1,3 +1,5 @@
+<?php include 'resources/views/layouts/header.php'; ?>
+
 <section class="p-4">
     <div class="container">
         <div class="row">
@@ -24,8 +26,9 @@
                             <th scope="row"><img src="storage/app/product/<?= $row['infoProduct']['id'] . ".jpg" ?>"
                                                  alt=""></th>
                             <td><?= $row['infoProduct']['title']; ?></td>
-                            <td><input type="number" id="quantity" name="quantity" value="<?= $row['quantity']; ?>" min="0" max="<?= $maxStock['stock'];?>" required></td>
-                            <td><?= $row['priceTtc']; ?>€</td>
+                            <td><input type="number" id="quantity" name="quantity" value="<?= $row['quantity']; ?>"
+                                       min="0" max="<?= $maxStock['stock']; ?>" required></td>
+                            <td><?= $row['priceTtc']; ?>€ <a href="index.php?action=cart&delete=<?= $row['infoProduct']['id'] ?>">X</a> </td>
                             <td><?= $row['totalPriceQteTtc']; ?>€</td>
                         </tr>
                     <?php endif; ?>
@@ -39,13 +42,16 @@
             <div class="col-md-12">
                 <p class="text-right">
                     <input name="reset" type="submit" value="Vider le panier" class="btn bg-dark text-light"/>
-                    <input name="modify" type="submit" value="Mettre à jour le panier" class="btn bg-warning text-light"/>
+                    <input name="modify" type="submit" value="Mettre à jour le panier"
+                           class="btn bg-warning text-light"/>
                     <input name="validate" type="submit" value="Valider le panier" class="btn bg-success text-light"/>
                 </p>
             </div>
         </form>
     </div>
 </section>
+
+<?php include 'resources/views/layouts/footer.php'; ?>
 
 
 
